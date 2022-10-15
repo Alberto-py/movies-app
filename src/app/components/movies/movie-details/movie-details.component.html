@@ -1,1 +1,63 @@
-<p>movie-details works!</p>
+<div class="text-center" *ngIf="!movie">
+    <img src="/assets/images/loading.gif" alt="loading">
+</div>
+<div class="row" *ngIf="movie">
+    <div class="col-md-4">
+        <img [src]="movie.image" [alt]="movie.title">
+    </div>
+    <div class="col-md-8">
+        <h3>{{movie.title}}</h3>
+        <table class="table table-striped table-hover">
+            <tbody>
+                <tr>
+                    <td><strong>Descripción:</strong></td>
+                    <td>
+                        {{movie.description}}
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Año:</strong></td>
+                    <td>
+                        {{movie.year}}
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Géneros:</strong></td>
+                    <td>
+                        <span *ngFor="let genre of movie.genres" class="badge">
+                            {{genre.name}}
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Servidores:</strong></td>
+                    <td>
+                        <span *ngFor="let embedUrl of movie.embedUrls" class="badge">
+                            {{embedUrl.server}}
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Calificación:</strong></td>
+                    <td>
+                        {{movie.rating}}
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Lanzamiento:</strong></td>
+                    <td>
+                        {{movie.release}}
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Links:</strong></td>
+                    <td>
+                        <span *ngFor="let embedUrl of movie.embedUrls" class="badge">
+                            <a [href]="embedUrl.url" class="text-warning">{{embedUrl.url}}</a>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

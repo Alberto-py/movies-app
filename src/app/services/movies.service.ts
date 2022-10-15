@@ -19,5 +19,13 @@ export class MoviesService {
     return this.http.get(this.urlBase + '/movies',
     {headers: this.headers, params: {query: titulo}})
     .pipe(map((resp: any)=> resp.results))
-  }
+  };
+
+  buscarPeliculaId(movieId: string): Observable<any> {
+    return this.http.get(this.urlBase + '/movie' + '/' + movieId, 
+    {
+      headers: this.headers
+    })
+    .pipe(map((resp: any)=> resp.result))
+  };
 }

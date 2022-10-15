@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +10,13 @@ export class HeaderComponent implements OnInit {
 
   movieTile!: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   buscarPeliculas(event: Event) {
     event.preventDefault();
+    this.router.navigate(['/movies'], {queryParams: {q: this.movieTile}});
   }
 }
