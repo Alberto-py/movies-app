@@ -28,4 +28,16 @@ export class MoviesService {
     })
     .pipe(map((resp: any)=> resp.result))
   };
+
+  buscarGeneros(): Observable<any> {
+    return this.http.get(this.urlBase + '/genres', 
+    {headers: this.headers})
+    .pipe(map((resp: any)=> resp.results))
+  };
+
+  buscar(): Observable<any> {
+    return this.http.get(this.urlBase + '/movies', 
+    {headers: this.headers})
+    .pipe(map((resp: any)=> resp.results))
+  };
 }

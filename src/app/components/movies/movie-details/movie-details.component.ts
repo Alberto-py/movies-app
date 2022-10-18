@@ -16,7 +16,7 @@ export class MovieDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: any) => {
       this.moviesService.buscarPeliculaId(params.movieId).subscribe(response => {
-        console.log(response);
+        //console.log(response);
         this.movie = response;
       })
     })
