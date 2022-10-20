@@ -17,6 +17,6 @@ export class HeaderComponent implements OnInit {
 
   buscarPeliculas(event: Event) {
     event.preventDefault();
-    this.router.navigate(['/movies'], {queryParams: {q: this.movieTile}});
+    this.router.navigate(['/movie'], {queryParams: {q: this.movieTile}});
   }
 }
