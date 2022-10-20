@@ -9,13 +9,13 @@ import { MoviesService } from '../../services/movies.service';
 export class HomeComponent implements OnInit {
 
   year = new Date().getFullYear();
-  genres!: any[];
+  movies!: any[];
 
   constructor(private moviesService: MoviesService) { }
 
   ngOnInit(): void {
-    this.moviesService.buscarGeneros().subscribe(response => {
-      this.genres = response;
+    this.moviesService.buscar().subscribe(response => {
+      this.movies = response;
     })
   }
 

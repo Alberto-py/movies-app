@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MoviesListComponent } from './components/movies/movies-list/movies-list.component';
 import { MovieDetailsComponent } from './components/movies/movie-details/movie-details.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MoviesComponent } from './components/movies/movies/movies.component';
+import { MoviesGenresComponent } from './components/movies/movies-genres/movies-genres.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { MoviesComponent } from './components/movies/movies/movies.component';
     HomeComponent,
     MoviesListComponent,
     MovieDetailsComponent,
-    MoviesComponent
+    MoviesGenresComponent
   ],
   imports: [
     BrowserModule,
